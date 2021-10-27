@@ -12,7 +12,7 @@ test("should return buzz", () => {
   expect(fizzOrBuzz(55)).toBe("buzz");
 });
 
-test("should return fizz", () => {
+test("should return input number", () => {
   expect(fizzOrBuzz(1)).toBe("1");
   expect(fizzOrBuzz(13)).toBe("13");
   expect(fizzOrBuzz(29)).toBe("29");
