@@ -2,23 +2,15 @@ import { useState } from "react";
 import { fizzOrBuzz } from "../utils/fizz-or-buzz";
 
 export default function FizzBuzz(): JSX.Element {
-  const [storedValuesFromCurrentRender, queueRerenderWithNewStoredValues] =
-    useState<(string | number)[]>([1]);
+  const [result, setResult] = useState<(string | number)[]>([1]);
 
-  const currentValue: number = storedValuesFromCurrentRender.length + 1;
+  const currentValue: number = result.length + 1;
 
   return (
     <>
       <h1>FizzBuzz</h1>
-      <p>{storedValuesFromCurrentRender.join("  -  ")}</p>
-      <button
-        onClick={() =>
-          queueRerenderWithNewStoredValues([
-            ...storedValuesFromCurrentRender,
-            fizzOrBuzz(currentValue),
-          ])
-        }
-      >
+      <p>{result.join("  -  ")}</p>
+      <button onClick={() => setResult([...result, fizzOrBuzz(currentValue)])}>
         NEXT
       </button>
     </>
