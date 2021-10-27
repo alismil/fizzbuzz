@@ -1,11 +1,11 @@
-export function fizzOrBuzz(currentValue: number): number | string {
-  if (currentValue % 3 === 0 && currentValue % 5 === 0) {
+export function fizzOrBuzz(num: number): number | string {
+  if (num % 3 === 0 && num % 5 === 0) {
     return "FizzBuzz";
-  } else if (currentValue % 3 === 0) {
+  } else if (num % 3 === 0) {
     return "Fizz";
-  } else if (currentValue % 5 === 0) {
+  } else if (num % 5 === 0) {
     return "Buzz";
   } else {
-    return currentValue;
+    return num;
   }
 }
